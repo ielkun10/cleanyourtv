@@ -214,6 +214,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     /** config.xml inputs_cec_state_only: only CEC device rows show a connection state, bare HDMI ports none. */
     private boolean inputsCecStateOnly;
     private boolean shamsi;
+    /** hijri_date: the Shamsi line shows the Umm al-Qura Hijri date instead. */
+    private boolean hijri;
+    /** The focus highlight's colour: the festive skin's, else accent_text_color (gold in Zaytoon), else 0 (white). */
+    private int focusAccent;
     /** greeting_name: said after the greeting, which is shown in capitals. */
     private String greetingName = "";
     /** Optional time-of-day backdrop (config.xml, sky_intensity); 0 keeps it hidden. */
@@ -517,7 +521,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         sky.setIntensity(cfg.skyIntensity);
         glass = findViewById(R.id.glass);
         glass.setStyle(cfg.glassStyle);
-        if (festive) glass.setAccent(festival.accentColor());
+        focusAccent = festive ? festival.accentColor() : cfg.accentTextColor;
+        if (focusAccent != 0) glass.setAccent(focusAccent);
         ambient = findViewById(R.id.ambient);
         // The glow is one bitmap, so its alpha can be applied while drawing it. Otherwise every frame of
         // a fade renders it into a full-screen offscreen buffer first.
@@ -547,9 +552,14 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         clockBlock = findViewById(R.id.leftBlock);
         clockRefresh = new ClockRefresh(clockBlock);
         greetingColor = greeting.getCurrentTextColor();
+        if (cfg.accentTextColor != 0) {
+            greetingColor = cfg.accentTextColor;
+            greeting.setTextColor(greetingColor);
+            findViewById(R.id.clockDivider).setBackgroundColor(cfg.accentTextColor);
+        }
         if (!cfg.showGreeting) greeting.setVisibility(View.GONE);
         // Keep the other header layouts as designed: their extra lines change the block's centre.
-        if (!cfg.showGreeting && !cfg.dateBelowClock && !cfg.shamsiDate && !cfg.lunarDate
+        if (!cfg.showGreeting && !cfg.dateBelowClock && !cfg.shamsiDate && !cfg.hijriDate && !cfg.lunarDate
                 && !cfg.topMenu && !getResources().getBoolean(R.bool.rtl_menu_bar)) {
             centerCompactHeader();
         }
@@ -590,7 +600,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         showStats = cfg.showStats;
         inputsConnectedOnly = cfg.inputsConnectedOnly;
         inputsCecStateOnly = cfg.inputsCecStateOnly;
-        shamsi = cfg.shamsiDate;
+        shamsi = cfg.shamsiDate || cfg.hijriDate;
+        hijri = cfg.hijriDate;
         lunarDate = findViewById(R.id.lunarDate);
         lunar = cfg.lunarDate;
         lunarOffset = Lunar.offsetFor(cfg.lunarUtcOffset, Locale.getDefault());
@@ -1692,7 +1703,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         reordering = false;
         dimOthers();   // drop() ran while reordering was still on; restore full brightness now the mode is off
         adapter.setReordering(false);
-        glass.setAccent(festive ? festival.accentColor() : 0);
+        glass.setAccent(focusAccent);
         btnReorder.setActivated(false);
         List<String> keys = adapter.movableKeys();
         List<String> before = orderAtStart;
@@ -2795,7 +2806,9 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                     : getString(R.string.greeting_with_name, getString(res), greetingName));
             greeting.setTextColor(greetingColor);
         }
-        if (shamsi) shamsiDate.setText(Shamsi.today(getResources()));
+        if (shamsi) shamsiDate.setText(hijri
+                ? Hijri.today(getResources().getConfiguration().getLocales().get(0))
+                : Shamsi.today(getResources()));
         if (lunar) lunarDate.setText(Lunar.today(getResources(), lunarOffset));
     }
 

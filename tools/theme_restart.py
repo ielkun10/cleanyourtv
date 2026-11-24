@@ -16,7 +16,7 @@ import shlex
 import sys
 import time
 
-PACKAGE = "com.gathin.tvhome"
+PACKAGE = os.environ.get("LAUNCHER_PKG") or "com.gathin.tvhome"  # Zaytoon fork: sa.zaytoon.home
 SERVICES = "enabled_accessibility_services"
 FLAG = "accessibility_enabled"
 ACTION = "android.accessibilityservice.AccessibilityService"

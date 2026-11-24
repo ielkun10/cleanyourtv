@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Outfit has no Arabic letters, so Arabic words fell back to the system font beside Outfit digits and Latin.
+     Noto Kufi Arabic draws both, in one face, with the letters joined by the system's shaper. -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ReferenceType">
+    <string name="font_body" translatable="false">@font/noto_kufi_arabic</string>
+    <string name="font_regular" translatable="false">@font/noto_kufi_arabic_regular</string>
+    <string name="font_light" translatable="false">@font/noto_kufi_arabic_light</string>
+    <string name="font_extralight" translatable="false">@font/noto_kufi_arabic_extralight</string>
+    <string name="font_medium" translatable="false">@font/noto_kufi_arabic_medium</string>
+</resources>
