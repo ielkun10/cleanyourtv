@@ -10,7 +10,7 @@
 | التغيير | أين |
 |---|---|
 | اسم حزمة مستقل `sa.zaytoon.home`، فيُثبَّت بجانب واجهة Google TV وبجانب CleanYourTV الأصلي دون أن يحل محل أي منهما | `launcher/gradle.properties` |
-| خط عربي كامل: Noto Kufi Arabic (SIL OFL 1.1) بدل Outfit الذي لا يحوي حروفًا عربية، مقتطع إلى العربية واللاتينية الأساسية (١٤٩ كيلوبايت) | `launcher/app/src/main/res/font/`، `values-ar/fonts.xml` |
+| خط عربي كامل: Noto Kufi Arabic (SIL OFL 1.1) بدل Outfit الذي لا يحوي حروفًا عربية، مقتطع إلى الحروف العربية والتشكيل والأرقام واللاتينية الأساسية (٨٣ كيلوبايت) | `launcher/app/src/main/res/font/`، `values-ar/fonts.xml` |
 | اتجاه من اليمين لليسار للشبكة وشريط القوائم، كما في العبرية | `values-ar/bools.xml` |
 | التاريخ الهجري بتقويم أم القرى من مكتبة ICU المدمجة في أندرويد، بأسماء الأشهر العربية | `Hijri.java`، المفتاح `hijri_date` |
 | لون ذهبي للتحية والخط تحت الساعة وتوهج التركيز | `AccentText.java`، المفتاح `accent_text_color` |
