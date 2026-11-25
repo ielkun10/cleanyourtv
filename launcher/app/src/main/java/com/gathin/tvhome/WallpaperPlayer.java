@@ -210,6 +210,8 @@ final class WallpaperPlayer {
      * below the buttons' row rather than flush against it; the offset is fixed, so a taller top bar (font scale,
      * an extra date line) eats into that gap — and it has to stay clear of the clock block and of the tiles.
      */
+    static final String CAPTION_TAG = "wallpaper_caption";
+
     private static TextView makeCaption(Context context, FrameLayout root) {
         float dp = context.getResources().getDisplayMetrics().density;
         TextView text = new TextView(context);
@@ -237,6 +239,8 @@ final class WallpaperPlayer {
         params.setMarginEnd(Math.round(62 * dp) - pad);
         // In a holder of its own, so scrolling can fade it (scrolledAway) without fighting the picture-change fade.
         FrameLayout holder = new FrameLayout(context);
+        // Found by this tag by a theme layer that moves the clock to the right edge (the Zaytoon fork).
+        holder.setTag(CAPTION_TAG);
         holder.addView(text, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         root.addView(holder, params);

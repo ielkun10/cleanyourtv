@@ -132,10 +132,30 @@ public final class Zaytoon {
             int y = at[1] - rootAt[1];
             if ((int) strip.getTranslationY() != y) strip.setTranslationY(y);
             strip.setVisibility(View.VISIBLE);
+            moveCaption(root);
         };
         clockBlock.addOnLayoutChangeListener(place);
         root.addOnLayoutChangeListener(place);
         strip.update();
+    }
+
+    /**
+     * The launcher puts the wallpaper's name and credit at the top right, which is where the clock now stands. It
+     * goes to the bottom left corner instead, under the dock, where nothing else is drawn.
+     */
+    private void moveCaption(FrameLayout root) {
+        View holder = root.findViewWithTag("wallpaper_caption");
+        if (holder == null || !(holder.getLayoutParams() instanceof FrameLayout.LayoutParams)) return;
+        FrameLayout.LayoutParams p = (FrameLayout.LayoutParams) holder.getLayoutParams();
+        int g = Gravity.BOTTOM | Gravity.LEFT;
+        if (p.gravity == g) return;
+        p.gravity = g;
+        p.topMargin = 0;
+        p.setMarginEnd(0);
+        p.rightMargin = 0;
+        p.leftMargin = Ui.dp(activity, 48);
+        p.bottomMargin = Ui.dp(activity, 6);
+        holder.post(() -> holder.setLayoutParams(p));
     }
 
     private void refreshStrip() {
