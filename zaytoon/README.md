@@ -24,7 +24,7 @@
 ## الإنترنت والخصوصية
 
 اللانشر الأصلي بلا إنترنت. زيتون يضيف صلاحية `INTERNET` لأنك طلبت الطقس والرياضة والخلفيات، ويقيّدها بقائمة ثابتة في
-`Net.java`: `api.open-meteo.com` و`site.api.espn.com` و`a.espncdn.com` و`upload.wikimedia.org`، عبر HTTPS فقط، ولا
+`Net.java`: `api.open-meteo.com` و`site.api.espn.com` و`a.espncdn.com` و`upload.wikimedia.org` و`thumb.wikimedia.org`، عبر HTTPS فقط، ولا
 يتصل بشيء إلا والشاشة الرئيسية أو اللوحة مفتوحة. لا حساب ولا مفتاح ولا اشتراك ولا تحليلات.
 
 ## حدود المصادر المجانية

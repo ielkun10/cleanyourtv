@@ -19,7 +19,8 @@ final class Net {
             "api.open-meteo.com",          // weather
             "site.api.espn.com",           // football fixtures, results, live scores, tables
             "a.espncdn.com",               // club crests
-            "upload.wikimedia.org");       // wallpapers (Wikimedia Commons)
+            "upload.wikimedia.org",        // wallpapers (Wikimedia Commons originals)
+            "thumb.wikimedia.org");        // wallpapers (Commons' 3840 px renderings)
 
     private Net() {
     }
@@ -33,19 +34,26 @@ final class Net {
         }
     }
 
+    /** Follows up to three redirects, each only to another allowed host over HTTPS. */
     private static HttpURLConnection open(String url) throws IOException {
-        if (!allowed(url)) throw new IOException("host not allowed: " + url);
-        HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
-        c.setConnectTimeout(15000);
-        c.setReadTimeout(30000);
-        c.setInstanceFollowRedirects(false);
-        c.setRequestProperty("User-Agent", "Zaytoon-TV/1.0 (personal Android TV launcher)");
-        int code = c.getResponseCode();
-        if (code != 200) {
+        for (int hop = 0; hop < 4; hop++) {
+            if (!allowed(url)) throw new IOException("host not allowed: " + url);
+            HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
+            c.setConnectTimeout(15000);
+            c.setReadTimeout(30000);
+            c.setInstanceFollowRedirects(false);
+            c.setRequestProperty("User-Agent", "Zaytoon-TV/1.0 (personal Android TV launcher)");
+            int code = c.getResponseCode();
+            if (code == 200) return c;
+            String next = c.getHeaderField("Location");
             c.disconnect();
+            if (code / 100 == 3 && next != null) {
+                url = new URL(new URL(url), next).toString();
+                continue;
+            }
             throw new IOException("HTTP " + code + " for " + url);
         }
-        return c;
+        throw new IOException("too many redirects");
     }
 
     static String text(String url, int maxBytes) throws IOException {

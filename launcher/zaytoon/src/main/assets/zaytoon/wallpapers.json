@@ -1,0 +1,265 @@
+{
+ "sets": [
+  {
+   "id": "mountains",
+   "name": "جبال"
+  },
+  {
+   "id": "desert",
+   "name": "صحارى"
+  },
+  {
+   "id": "heritage",
+   "name": "العلا ومعالم"
+  },
+  {
+   "id": "sea",
+   "name": "البحر الأحمر"
+  }
+ ],
+ "items": [
+  {
+   "set": "mountains",
+   "title": "جبال الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada,_near_al-Taif,_Saudi_Arabia_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%281%29.jpg/3840px-Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%281%29.jpg",
+   "source_title": "File:Al-Hada, near al-Taif, Saudi Arabia (1).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "جبال الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada,_near_al-Taif,_Saudi_Arabia_(6).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%286%29.jpg/3840px-Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%286%29.jpg",
+   "source_title": "File:Al-Hada, near al-Taif, Saudi Arabia (6).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "جبال الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada,_near_al-Taif,_Saudi_Arabia_(7).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%287%29.jpg/3840px-Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%287%29.jpg",
+   "source_title": "File:Al-Hada, near al-Taif, Saudi Arabia (7).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "جبال الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada,_near_al-Taif,_Saudi_Arabia_(8).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%288%29.jpg/3840px-Al-Hada%2C_near_al-Taif%2C_Saudi_Arabia_%288%29.jpg",
+   "source_title": "File:Al-Hada, near al-Taif, Saudi Arabia (8).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "جبال الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada_mountain_road,_al-Taif,_Saudi_Arabia_(2).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Al-Hada_mountain_road%2C_al-Taif%2C_Saudi_Arabia_%282%29.jpg/3840px-Al-Hada_mountain_road%2C_al-Taif%2C_Saudi_Arabia_%282%29.jpg",
+   "source_title": "File:Al-Hada mountain road, al-Taif, Saudi Arabia (2).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "غروب الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada_sunset,_al-Taif,_Saudi_Arabia_(6).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Al-Hada_sunset%2C_al-Taif%2C_Saudi_Arabia_%286%29.jpg/3840px-Al-Hada_sunset%2C_al-Taif%2C_Saudi_Arabia_%286%29.jpg",
+   "source_title": "File:Al-Hada sunset, al-Taif, Saudi Arabia (6).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "غروب الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada_sunset,_near_al-Taif,_Saudi_Arabia_(2).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Al-Hada_sunset%2C_near_al-Taif%2C_Saudi_Arabia_%282%29.jpg/3840px-Al-Hada_sunset%2C_near_al-Taif%2C_Saudi_Arabia_%282%29.jpg",
+   "source_title": "File:Al-Hada sunset, near al-Taif, Saudi Arabia (2).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "جبال الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada_mountain_road,_al-Taif_region,_Saudi_Arabia_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Al-Hada_mountain_road%2C_al-Taif_region%2C_Saudi_Arabia_%281%29.jpg/3840px-Al-Hada_mountain_road%2C_al-Taif_region%2C_Saudi_Arabia_%281%29.jpg",
+   "source_title": "File:Al-Hada mountain road, al-Taif region, Saudi Arabia (1).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "غروب الهدا، الطائف",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al-Hada_sunset,_near_al-Taif,_Saudi_Arabia_(14).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Al-Hada_sunset%2C_near_al-Taif%2C_Saudi_Arabia_%2814%29.jpg/3840px-Al-Hada_sunset%2C_near_al-Taif%2C_Saudi_Arabia_%2814%29.jpg",
+   "source_title": "File:Al-Hada sunset, near al-Taif, Saudi Arabia (14).jpg"
+  },
+  {
+   "set": "mountains",
+   "title": "جبال طويق",
+   "artist": "saudipics",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Tuwaiq.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Tuwaiq.jpg/3840px-Tuwaiq.jpg",
+   "source_title": "File:Tuwaiq.jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(105).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Saudi_Arabia_Empty_Quarter_Nov._2021_%28105%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%28105%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (105).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(138).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Saudi_Arabia_Empty_Quarter_Nov._2021_%28138%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%28138%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (138).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(60).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Saudi_Arabia_Empty_Quarter_Nov._2021_%2860%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%2860%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (60).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(63).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Saudi_Arabia_Empty_Quarter_Nov._2021_%2863%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%2863%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (63).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(69).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Saudi_Arabia_Empty_Quarter_Nov._2021_%2869%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%2869%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (69).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(80).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Saudi_Arabia_Empty_Quarter_Nov._2021_%2880%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%2880%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (80).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Saudi_Arabia_Empty_Quarter_Nov._2021_(90).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Saudi_Arabia_Empty_Quarter_Nov._2021_%2890%29.jpg/3840px-Saudi_Arabia_Empty_Quarter_Nov._2021_%2890%29.jpg",
+   "source_title": "File:Saudi Arabia Empty Quarter Nov. 2021 (90).jpg"
+  },
+  {
+   "set": "desert",
+   "title": "الربع الخالي",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:In_the_Empty_Quarter_east_of_Najran,_Saudi_Arabia_(13).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/In_the_Empty_Quarter_east_of_Najran%2C_Saudi_Arabia_%2813%29.jpg/3840px-In_the_Empty_Quarter_east_of_Najran%2C_Saudi_Arabia_%2813%29.jpg",
+   "source_title": "File:In the Empty Quarter east of Najran, Saudi Arabia (13).jpg"
+  },
+  {
+   "set": "heritage",
+   "title": "الحِجر (مدائن صالح)، العلا",
+   "artist": "Following Hadrian",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Hegra_(Mada%27in_Salih),_the_kingdom%27s_second_Nabatean_capital_after_Petra,_Saudi_Arabia_-_53533892417.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Hegra_%28Mada%27in_Salih%29%2C_the_kingdom%27s_second_Nabatean_capital_after_Petra%2C_Saudi_Arabia_-_53533892417.jpg/3840px-Hegra_%28Mada%27in_Salih%29%2C_the_kingdom%27s_second_Nabatean_capital_after_Petra%2C_Saudi_Arabia_-_53533892417.jpg",
+   "source_title": "File:Hegra (Mada'in Salih), the kingdom's second Nabatean capital after Petra, Saudi Arabia - 53533892417.jpg"
+  },
+  {
+   "set": "heritage",
+   "title": "الحِجر (مدائن صالح)، العلا",
+   "artist": "Following Hadrian",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Hegra_(Mada%27in_Salih),_the_kingdom%27s_second_Nabatean_capital_after_Petra,_Saudi_Arabia_-_53544856657.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hegra_%28Mada%27in_Salih%29%2C_the_kingdom%27s_second_Nabatean_capital_after_Petra%2C_Saudi_Arabia_-_53544856657.jpg/3840px-Hegra_%28Mada%27in_Salih%29%2C_the_kingdom%27s_second_Nabatean_capital_after_Petra%2C_Saudi_Arabia_-_53544856657.jpg",
+   "source_title": "File:Hegra (Mada'in Salih), the kingdom's second Nabatean capital after Petra, Saudi Arabia - 53544856657.jpg"
+  },
+  {
+   "set": "heritage",
+   "title": "جبل الفيل، العلا",
+   "artist": "Sammy Six",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Elephant_Rock_(6736020449).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Elephant_Rock_%286736020449%29.jpg/3840px-Elephant_Rock_%286736020449%29.jpg",
+   "source_title": "File:Elephant Rock (6736020449).jpg"
+  },
+  {
+   "set": "heritage",
+   "title": "جبل الفيل، العلا",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Elephant_Rock_2020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Elephant_Rock_2020.jpg/3840px-Elephant_Rock_2020.jpg",
+   "source_title": "File:Elephant Rock 2020.jpg"
+  },
+  {
+   "set": "heritage",
+   "title": "جبل الفيل، العلا",
+   "artist": "Saudi Press Agency (SPA)",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Elephant_rock,_Al-%27Ula_(2024).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Elephant_rock%2C_Al-%27Ula_%282024%29.jpg/3840px-Elephant_rock%2C_Al-%27Ula_%282024%29.jpg",
+   "source_title": "File:Elephant rock, Al-'Ula (2024).jpg"
+  },
+  {
+   "set": "heritage",
+   "title": "الرياض",
+   "artist": "B.alotaby",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Riyadh_Skyline_showing_the_King_Abdullah_Financial_District_(KAFD)_and_the_famous_Kingdom_Tower_.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Riyadh_Skyline_showing_the_King_Abdullah_Financial_District_%28KAFD%29_and_the_famous_Kingdom_Tower_.jpg/3840px-Riyadh_Skyline_showing_the_King_Abdullah_Financial_District_%28KAFD%29_and_the_famous_Kingdom_Tower_.jpg",
+   "source_title": "File:Riyadh Skyline showing the King Abdullah Financial District (KAFD) and the famous Kingdom Tower .jpg"
+  },
+  {
+   "set": "sea",
+   "title": "غروب البحر الأحمر، أملج",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Red_Sea_sunset;_Umm_Lajj,_Saudi_Arabia_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Red_Sea_sunset%3B_Umm_Lajj%2C_Saudi_Arabia_%281%29.jpg/3840px-Red_Sea_sunset%3B_Umm_Lajj%2C_Saudi_Arabia_%281%29.jpg",
+   "source_title": "File:Red Sea sunset; Umm Lajj, Saudi Arabia (1).jpg"
+  },
+  {
+   "set": "sea",
+   "title": "غروب البحر الأحمر، أملج",
+   "artist": "Richard Mortel",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Red_Sea_sunset;_Umm_Lajj,_Saudi_Arabia_(3).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Red_Sea_sunset%3B_Umm_Lajj%2C_Saudi_Arabia_%283%29.jpg/3840px-Red_Sea_sunset%3B_Umm_Lajj%2C_Saudi_Arabia_%283%29.jpg",
+   "source_title": "File:Red Sea sunset; Umm Lajj, Saudi Arabia (3).jpg"
+  },
+  {
+   "set": "sea",
+   "title": "جزر فرسان",
+   "artist": "Abdalrahman Mohrat",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Empty_Coast_in_Farasan_Island.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Empty_Coast_in_Farasan_Island.jpg/3840px-Empty_Coast_in_Farasan_Island.jpg",
+   "source_title": "File:Empty Coast in Farasan Island.jpg"
+  }
+ ]
+}

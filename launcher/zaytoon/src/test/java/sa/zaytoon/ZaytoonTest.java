@@ -138,4 +138,27 @@ public class ZaytoonTest {
         assertEquals("برشلونة", Teams.team("83").name);
         assertEquals("تشيلسي", Teams.team("363").name);
     }
+
+    /** Every wallpaper comes from an allowed host, with a free licence, an author and a set that exists. */
+    @Test
+    public void wallpaperManifestIsClean() throws Exception {
+        java.io.File f = new java.io.File("src/main/assets/zaytoon/wallpapers.json");
+        if (!f.isFile()) f = new java.io.File("launcher/zaytoon/src/main/assets/zaytoon/wallpapers.json");
+        org.json.JSONObject m = new org.json.JSONObject(new String(java.nio.file.Files.readAllBytes(f.toPath()), StandardCharsets.UTF_8));
+        java.util.Set<String> sets = new java.util.HashSet<>();
+        org.json.JSONArray s = m.getJSONArray("sets");
+        for (int i = 0; i < s.length(); i++) sets.add(s.getJSONObject(i).getString("id"));
+        org.json.JSONArray items = m.getJSONArray("items");
+        assertTrue(items.length() >= 20);
+        for (int i = 0; i < items.length(); i++) {
+            org.json.JSONObject it = items.getJSONObject(i);
+            String url = it.getString("url");
+            assertTrue(url, Net.allowed(url));
+            assertTrue(url, url.contains("/3840px-"));
+            String lic = it.getString("license");
+            assertTrue(lic, lic.startsWith("CC BY") || lic.startsWith("CC0") || lic.toLowerCase().contains("public domain"));
+            assertFalse(it.getString("artist").isEmpty());
+            assertTrue(sets.contains(it.getString("set")));
+        }
+    }
 }

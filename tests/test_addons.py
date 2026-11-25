@@ -30,8 +30,8 @@ class AddonIsolationTest(unittest.TestCase):
             if settings.is_file():
                 text = settings.read_text(encoding="utf-8")
                 self.assertNotIn("addons", text, f"launcher/{name} must not include add-ons")
-                self.assertEqual(re.findall(r"include\s*\(?\s*['\"]([^'\"]+)", text), [":app"],
-                                 "the core build is the launcher app alone")
+                self.assertEqual(re.findall(r"include\s*\(?\s*['\"]([^'\"]+)", text), [":app", ":zaytoon"],
+                                 "the core build is the launcher app and, in the Zaytoon fork, its own module")
 
     def test_launcher_never_references_addons(self):
         for path in LAUNCHER.rglob("*"):

@@ -348,6 +348,14 @@
                 android:clipToPadding="false"
                 android:orientation="horizontal">
 
+                <!-- Zaytoon fork: opens the panel (weather, prayer times, football, wallpapers, look). -->
+                <TextView
+                    android:id="@+id/btnZaytoon"
+                    style="@style/TopButtonIcon"
+                    android:contentDescription="@string/zaytoon_panel"
+                    android:drawableStart="@drawable/ic_zaytoon"
+                    android:nextFocusDown="@+id/grid" />
+
                 <TextView
                     android:id="@+id/btnSettings"
                     style="@style/TopButton"

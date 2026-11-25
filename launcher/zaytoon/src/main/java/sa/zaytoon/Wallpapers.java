@@ -258,7 +258,9 @@ public final class Wallpapers {
         if (dir == null) return 0;
         ContentResolver cr = c.getContentResolver();
         int added = 0;
-        for (String volume : MediaStore.getExternalVolumeNames(c)) {
+        java.util.Collection<String> volumes = android.os.Build.VERSION.SDK_INT >= 29
+                ? MediaStore.getExternalVolumeNames(c) : java.util.Collections.singleton("external");
+        for (String volume : volumes) {
             Uri uri = MediaStore.Images.Media.getContentUri(volume);
             String[] cols = {MediaStore.Images.Media._ID, MediaStore.Images.Media.MIME_TYPE};
             String where = MediaStore.Images.Media.BUCKET_DISPLAY_NAME + "=?";

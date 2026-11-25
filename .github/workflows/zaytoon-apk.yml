@@ -32,7 +32,7 @@ jobs:
         working-directory: launcher
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon testReleaseUnitTest lintRelease assembleRelease
+          ./gradlew --no-daemon --continue testReleaseUnitTest lintRelease assembleRelease
       - name: Package id, size and checksum
         run: |
           apk=launcher/app/build/outputs/apk/release/app-release.apk
@@ -67,7 +67,7 @@ jobs:
           cd out
           git init -q -b zaytoon/build-output
           git config user.name "zaytoon-ci"; git config user.email "zaytoon-ci@users.noreply.github.com"
-          git add -A; git commit -qm "build ${GITHUB_SHA}"
+          git add -A; git commit -qm "build ${GITHUB_SHA}" || { echo "nothing to publish"; exit 0; }
           git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/zaytoon/build-output
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
