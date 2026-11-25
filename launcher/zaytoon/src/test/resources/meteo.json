@@ -1,0 +1,73 @@
+{
+ "latitude": 18.312828,
+ "longitude": 42.714844,
+ "generationtime_ms": 0.2486705780029297,
+ "utc_offset_seconds": 10800,
+ "timezone": "Asia/Riyadh",
+ "timezone_abbreviation": "GMT+3",
+ "elevation": 1998.0,
+ "current_units": {
+  "time": "iso8601",
+  "interval": "seconds",
+  "temperature_2m": "°C",
+  "weather_code": "wmo code",
+  "is_day": "",
+  "relative_humidity_2m": "%",
+  "wind_speed_10m": "km/h"
+ },
+ "current": {
+  "time": "2026-11-25T14:15",
+  "interval": 900,
+  "temperature_2m": 23.3,
+  "weather_code": 1,
+  "is_day": 1,
+  "relative_humidity_2m": 22,
+  "wind_speed_10m": 8.0
+ },
+ "daily_units": {
+  "time": "iso8601",
+  "weather_code": "wmo code",
+  "temperature_2m_max": "°C",
+  "temperature_2m_min": "°C",
+  "sunrise": "iso8601",
+  "sunset": "iso8601"
+ },
+ "daily": {
+  "time": [
+   "2026-11-25",
+   "2026-11-26",
+   "2026-11-27",
+   "2026-11-28"
+  ],
+  "weather_code": [
+   45,
+   3,
+   3,
+   1
+  ],
+  "temperature_2m_max": [
+   23.6,
+   24.3,
+   24.0,
+   24.4
+  ],
+  "temperature_2m_min": [
+   7.3,
+   10.3,
+   10.5,
+   10.4
+  ],
+  "sunrise": [
+   "2026-11-25T06:21",
+   "2026-11-26T06:21",
+   "2026-11-27T06:22",
+   "2026-11-28T06:22"
+  ],
+  "sunset": [
+   "2026-11-25T17:31",
+   "2026-11-26T17:31",
+   "2026-11-27T17:31",
+   "2026-11-28T17:31"
+  ]
+ }
+}

@@ -4,7 +4,7 @@
   "hijri_date": true,
   "background_color": "#141A12",
   "sky_intensity": 0,
-  "wallpaper": false,
+  "wallpaper": true,
   "dock_row": true,
   "dock_glass": true,
   "dock_opacity": 70,
@@ -26,5 +26,10 @@
   "fade_rows": true,
   "home_idle_clock_minutes": 30,
   "clock_wallpaper": true,
-  "clock_glow": false
+  "clock_glow": false,
+  "wallpaper_rotation_minutes": 20,
+  "wallpaper_order": "shuffle",
+  "wallpaper_dim": 25,
+  "wallpaper_captions": true,
+  "clock_wallpaper_dim": 40
 }

@@ -1,0 +1,204 @@
+{
+ "events": [
+  {
+   "id": "401878753",
+   "date": "2026-11-29T16:30Z",
+   "league": {
+    "name": "English Premier League"
+   },
+   "seasonType": {
+    "name": "2026-27 English Premier League"
+   },
+   "competitions": [
+    {
+     "date": "2026-11-29T16:30Z",
+     "status": {
+      "clock": 0.0,
+      "addedClock": 0.0,
+      "displayClock": "0'",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, November 29th at 11:30 AM EST",
+       "shortDetail": "11/29 - 11:30 AM EST"
+      }
+     },
+     "competitors": [
+      {
+       "id": "359",
+       "homeAway": "home",
+       "score": null,
+       "team": {
+        "id": "359",
+        "displayName": "Arsenal"
+       }
+      },
+      {
+       "id": "382",
+       "homeAway": "away",
+       "score": null,
+       "team": {
+        "id": "382",
+        "displayName": "Manchester City"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "401879218",
+   "date": "2026-12-02T19:30Z",
+   "league": {
+    "name": "English Premier League"
+   },
+   "seasonType": {
+    "name": "2026-27 English Premier League"
+   },
+   "competitions": [
+    {
+     "date": "2026-12-02T19:30Z",
+     "status": {
+      "clock": 0.0,
+      "addedClock": 0.0,
+      "displayClock": "0'",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Wed, December 2nd at 2:30 PM EST",
+       "shortDetail": "12/2 - 2:30 PM EST"
+      }
+     },
+     "competitors": [
+      {
+       "id": "382",
+       "homeAway": "home",
+       "score": null,
+       "team": {
+        "id": "382",
+        "displayName": "Manchester City"
+       }
+      },
+      {
+       "id": "357",
+       "homeAway": "away",
+       "score": null,
+       "team": {
+        "id": "357",
+        "displayName": "Leeds United"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "401879214",
+   "date": "2026-12-05T20:00Z",
+   "league": {
+    "name": "English Premier League"
+   },
+   "seasonType": {
+    "name": "2026-27 English Premier League"
+   },
+   "competitions": [
+    {
+     "date": "2026-12-05T20:00Z",
+     "status": {
+      "clock": 0.0,
+      "addedClock": 0.0,
+      "displayClock": "0'",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sat, December 5th at 3:00 PM EST",
+       "shortDetail": "12/5 - 3:00 PM EST"
+      }
+     },
+     "competitors": [
+      {
+       "id": "337",
+       "homeAway": "home",
+       "score": null,
+       "team": {
+        "id": "337",
+        "displayName": "Brentford"
+       }
+      },
+      {
+       "id": "382",
+       "homeAway": "away",
+       "score": null,
+       "team": {
+        "id": "382",
+        "displayName": "Manchester City"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "401915285",
+   "date": "2026-12-08T20:00Z",
+   "league": {
+    "name": "UEFA Champions League"
+   },
+   "seasonType": {
+    "name": "League Phase"
+   },
+   "competitions": [
+    {
+     "date": "2026-12-08T20:00Z",
+     "status": {
+      "clock": 0.0,
+      "addedClock": 0.0,
+      "displayClock": "0'",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Tue, December 8th at 3:00 PM EST",
+       "shortDetail": "12/8 - 3:00 PM EST"
+      }
+     },
+     "competitors": [
+      {
+       "id": "83",
+       "homeAway": "home",
+       "score": null,
+       "team": {
+        "id": "83",
+        "displayName": "Barcelona"
+       }
+      },
+      {
+       "id": "382",
+       "homeAway": "away",
+       "score": null,
+       "team": {
+        "id": "382",
+        "displayName": "Manchester City"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

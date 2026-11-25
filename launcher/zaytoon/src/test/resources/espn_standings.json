@@ -1,0 +1,154 @@
+{
+ "children": [
+  {
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "359",
+       "displayName": "Arsenal"
+      },
+      "stats": [
+       {
+        "name": "gamesPlayed",
+        "value": 11.0
+       },
+       {
+        "name": "losses",
+        "value": 1.0
+       },
+       {
+        "name": "pointDifferential",
+        "value": 10.0
+       },
+       {
+        "name": "points",
+        "value": 28.0
+       },
+       {
+        "name": "ties",
+        "value": 1.0
+       },
+       {
+        "name": "wins",
+        "value": 9.0
+       },
+       {
+        "name": "rank",
+        "value": 1.0
+       }
+      ]
+     },
+     {
+      "team": {
+       "id": "331",
+       "displayName": "Brighton & Hove Albion"
+      },
+      "stats": [
+       {
+        "name": "gamesPlayed",
+        "value": 11.0
+       },
+       {
+        "name": "losses",
+        "value": 3.0
+       },
+       {
+        "name": "pointDifferential",
+        "value": 17.0
+       },
+       {
+        "name": "points",
+        "value": 22.0
+       },
+       {
+        "name": "ties",
+        "value": 1.0
+       },
+       {
+        "name": "wins",
+        "value": 7.0
+       },
+       {
+        "name": "rank",
+        "value": 2.0
+       }
+      ]
+     },
+     {
+      "team": {
+       "id": "382",
+       "displayName": "Manchester City"
+      },
+      "stats": [
+       {
+        "name": "gamesPlayed",
+        "value": 11.0
+       },
+       {
+        "name": "losses",
+        "value": 3.0
+       },
+       {
+        "name": "pointDifferential",
+        "value": 8.0
+       },
+       {
+        "name": "points",
+        "value": 22.0
+       },
+       {
+        "name": "ties",
+        "value": 1.0
+       },
+       {
+        "name": "wins",
+        "value": 7.0
+       },
+       {
+        "name": "rank",
+        "value": 3.0
+       }
+      ]
+     },
+     {
+      "team": {
+       "id": "364",
+       "displayName": "Liverpool"
+      },
+      "stats": [
+       {
+        "name": "gamesPlayed",
+        "value": 11.0
+       },
+       {
+        "name": "losses",
+        "value": 2.0
+       },
+       {
+        "name": "pointDifferential",
+        "value": 8.0
+       },
+       {
+        "name": "points",
+        "value": 21.0
+       },
+       {
+        "name": "ties",
+        "value": 3.0
+       },
+       {
+        "name": "wins",
+        "value": 6.0
+       },
+       {
+        "name": "rank",
+        "value": 4.0
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

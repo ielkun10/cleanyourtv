@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- An olive sprig: a stem, three leaves and one olive. Drawn for Zaytoon; tinted by the pill's text colour. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp" android:height="22dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M4,20 C8,16 12,12 19,5" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M13,10.5 C13.5,7 16,4.5 20,3.5 C19.5,7 17,9.5 13,10.5Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M10.5,13 C7,12.5 4.5,10.5 3.5,7 C7,7.3 9.5,9.5 10.5,13Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M8.5,15.2 C9.2,18.4 11.5,20.4 14.8,21 C14.3,17.8 12,15.8 8.5,15.2Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M16.2,14.5m-2.2,0a2.2,2.6 0,1 1,4.4 0a2.2,2.6 0,1 1,-4.4 0" />
+</vector>

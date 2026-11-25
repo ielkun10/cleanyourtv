@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Zaytoon: weather (Open-Meteo), football (ESPN's public feed) and wallpapers (Wikimedia Commons).
+         Only these hosts are ever contacted (Net.ALLOWED), only while the home screen or the panel is open. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- "Import my pictures": the user's own photos from a Zaytoon folder or a USB stick, asked for on the TV. -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <application android:name="sa.zaytoon.ZaytoonApp">
+        <!-- Exported so the panel can be opened from adb for testing (am start -n <pkg>/sa.zaytoon.ZaytoonActivity);
+             it shows settings and data only, and changes nothing until someone presses OK on a row. -->
+        <activity
+            android:name="sa.zaytoon.ZaytoonActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen" />
+    </application>
+</manifest>

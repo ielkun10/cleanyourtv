@@ -70,6 +70,6 @@ jobs:
         run: |
           size=$(stat -c %s launcher/app/build/outputs/apk/release/app-release.apk)
           echo "release APK: $((size / 1024)) KB"
-          # Zaytoon fork: 640 KB, not upstream's 576 KB, to carry the bundled Arabic font (Noto Kufi Arabic, about
-          # 53 KB compressed). The target TV (TCL C7L) has 2.4 GB of RAM; the budget still stops anything else growing.
-          test "$size" -lt 655360 || { echo "APK is over 640 KB (Zaytoon budget); keep it small"; exit 1; }
+          # Zaytoon fork: 1024 KB, not upstream's 576 KB, to carry two Arabic fonts (Noto Kufi Arabic and
+          # Katibeh) and the zaytoon module. The target TV (TCL C7L) has 2.4 GB of RAM; the budget still stops anything else growing.
+          test "$size" -lt 1048576 || { echo "APK is over 1024 KB (Zaytoon budget); keep it small"; exit 1; }

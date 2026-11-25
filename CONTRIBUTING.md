@@ -119,7 +119,7 @@ build-tools 34.0.0; on macOS `brew install openjdk@17 android-commandlinetools` 
 
 No TV on the network, or an APK for someone else to install? Build it on its own: from `launcher/`,
 `./gradlew --no-daemon assembleRelease` leaves it at
-`launcher/app/build/outputs/apk/release/app-release.apk`, which has to stay under 655,360 B (640 KB) in the Zaytoon fork, which bundles an Arabic font; upstream's gate is 576 KB;
+`launcher/app/build/outputs/apk/release/app-release.apk`, which has to stay under 1,048,576 B (1024 KB) in the Zaytoon fork, which bundles two Arabic fonts and its own module; upstream's gate is 576 KB;
 CI builds with the same command and refuses a bigger one. Gradle also has to find the SDK, and this is
 where a hand build stops: `launcher/build-and-install.sh` writes the gitignored
 `launcher/local.properties` for you, so by hand either run

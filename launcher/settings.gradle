@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "tvhome"
 include ':app'
+// Zaytoon fork: the Arabic home's own features, merged into the one launcher APK.
+include ':zaytoon'

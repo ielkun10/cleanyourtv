@@ -1,20 +1,23 @@
 name: Zaytoon APK
 
-# The fork's own build: the same steps as ci.yml's launcher job, then the APK as a downloadable artifact
-# (kept 14 days) so it can be installed on the TV. Upstream ships no APKs; this workflow lives only in the fork.
+# The fork's own build: the same checks as ci.yml's launcher job, then the APK is installed on an Android TV
+# emulator (API 34, 1920x1080, like the TCL C7L's UI) and driven with the remote's keys. The APK, its checksum and
+# the screenshots are kept as an artifact and on the zaytoon/build-output branch. Upstream ships no APKs; this
+# workflow lives only in the fork.
 on:
   push:
     branches: ["zaytoon/**"]
-  pull_request:
+    paths-ignore: ["zaytoon/lab/**"]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   apk:
-    name: Build the Zaytoon launcher APK
+    name: Build, test on the TV emulator, publish
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
@@ -34,14 +37,46 @@ jobs:
         run: |
           apk=launcher/app/build/outputs/apk/release/app-release.apk
           aapt=$(ls "$ANDROID_HOME"/build-tools/34.0.0/aapt)
-          "$aapt" dump badging "$apk" | head -1
-          echo "size: $(stat -c %s "$apk") bytes"
+          "$aapt" dump badging "$apk" | head -1 | tee badging.txt
+          size=$(stat -c %s "$apk"); echo "size: $size bytes"
+          test "$size" -lt 1048576 || { echo "over the 1024 KB budget"; exit 1; }
           cp "$apk" zaytoon-launcher.apk
           sha256sum zaytoon-launcher.apk | tee zaytoon-launcher.apk.sha256
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Android TV emulator run
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: android-tv
+          arch: x86
+          profile: tv_1080p
+          force-avd-creation: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: false
+          script: bash zaytoon/lab/ui_test.sh zaytoon-launcher.apk
+      - name: Publish the APK and the screenshots to zaytoon/build-output
+        if: always()
+        run: |
+          mkdir -p out/screens
+          cp zaytoon-launcher.apk zaytoon-launcher.apk.sha256 badging.txt out/ 2>/dev/null || true
+          cp -r zaytoon/lab/ui/. out/screens/ 2>/dev/null || true
+          cd out
+          git init -q -b zaytoon/build-output
+          git config user.name "zaytoon-ci"; git config user.email "zaytoon-ci@users.noreply.github.com"
+          git add -A; git commit -qm "build ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/zaytoon/build-output
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
         with:
           name: zaytoon-launcher-apk
           path: |
             zaytoon-launcher.apk
             zaytoon-launcher.apk.sha256
-          retention-days: 14
+            zaytoon/lab/ui/
+          retention-days: 30
+      - name: Fail on a crash in the emulator run
+        run: test ! -f zaytoon/lab/ui/CRASHED

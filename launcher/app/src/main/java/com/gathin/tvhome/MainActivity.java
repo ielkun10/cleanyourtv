@@ -450,6 +450,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             if (festive) updateWifiLabel();
             sky.update();
             wallpaperPlayer.update();
+            if (zaytoon != null) zaytoon.minute();
             handler.postDelayed(this, MINUTE_MS);
         }
     };
@@ -943,9 +944,11 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         btnSettings.setOnKeyListener(pillKeys);
         btnReorder.setOnKeyListener(pillKeys);
         btnLibraryTop.setOnKeyListener(pillKeys);
+        findViewById(R.id.btnZaytoon).setOnKeyListener(pillKeys);
         for (View button : topAppButtons) button.setOnKeyListener(pillKeys);
         if (advancedEffects) {
-            List<View> pills = new ArrayList<>(Arrays.asList(btnInputs, btnWifi, btnVpn, btnReorder, btnLibraryTop, btnSettings));
+            List<View> pills = new ArrayList<>(Arrays.asList(btnInputs, btnWifi, btnVpn, btnReorder, btnLibraryTop,
+                    findViewById(R.id.btnZaytoon), btnSettings));
             pills.addAll(topAppButtons);
             for (View button : pills) {
                 button.setOnFocusChangeListener((view, focused) -> view.animate()
@@ -996,6 +999,25 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (savedInstanceState == null && !openLauncherSettingsIfAsked(getIntent()) && !openLibraryIfAsked(getIntent())) {
             openInputsIfAsked(getIntent());
         }
+        attachZaytoon(cfg);
+    }
+
+    /** Zaytoon fork: the big glass clock, the weather, prayer and football cards, and the panel's pill. */
+    private sa.zaytoon.Zaytoon zaytoon;
+
+    private void attachZaytoon(Config cfg) {
+        View clockView = findViewById(R.id.clock);
+        View topButtons = findViewById(R.id.topButtons);
+        android.graphics.Typeface body;
+        try {
+            body = getResources().getFont(R.font.noto_kufi_arabic);
+        } catch (RuntimeException e) {
+            body = android.graphics.Typeface.DEFAULT;
+        }
+        zaytoon = sa.zaytoon.Zaytoon.attach(this, root, (ViewGroup) clockBlock.getParent(), clockBlock, (TextView) clockView,
+                topButtons, body, cfg.accentTextColor, this::recreate);
+        View pill = findViewById(R.id.btnZaytoon);
+        pill.setOnClickListener(v -> startActivityForResult(sa.zaytoon.Zaytoon.panel(this), sa.zaytoon.Zaytoon.PANEL_REQUEST));
     }
 
     /**
@@ -1163,6 +1185,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (gameDay != null) gameDay.start();
         sky.update();
         wallpaperPlayer.start();
+        if (zaytoon != null) zaytoon.resume();
         handler.postDelayed(minuteTick, MINUTE_MS);
         if (festive && lamp != null) {
             lamp.start();
@@ -1186,6 +1209,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (sa.zaytoon.Zaytoon.needsReload(requestCode, resultCode)) {
+            recreate();
+            return;
+        }
         if (requestCode == LAUNCHER_SETTINGS_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getBooleanExtra(LauncherSettingsActivity.EXTRA_REORDER, false)) {
             getIntent().putExtra(LauncherSettingsActivity.EXTRA_REORDER, true);
@@ -1342,6 +1369,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         ambient.animate().cancel();
         heroArt.animate().cancel();
         handler.removeCallbacks(minuteTick);
+        if (zaytoon != null) zaytoon.pause();
         handler.removeCallbacks(openWhenOnline);
         startPending = null;   // leaving Home before the network came back: the boot's app stays closed
         stopStats();
