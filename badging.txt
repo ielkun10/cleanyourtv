@@ -1,0 +1,1 @@
+package: name='sa.zaytoon.home' versionCode='100' versionName='1.0.0-zaytoon' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'

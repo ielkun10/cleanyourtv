@@ -1,0 +1,39 @@
+/sdcard/Android/data/sa.zaytoon.home/files:
+total 32
+drwxrws--- 3 u0_a122 ext_data_rw 4096 2026-11-25 12:18 .
+drwxrws--- 3 u0_a122 ext_data_rw 4096 2026-11-25 12:18 ..
+-rw-rw---- 1 u0_a122 ext_data_rw  853 2026-11-25 12:18 config.json
+drwxrws--- 2 u0_a122 ext_data_rw 4096 2026-11-25 12:18 wallpapers
+
+/sdcard/Android/data/sa.zaytoon.home/files/wallpapers:
+total 49420
+drwxrws--- 2 u0_a122 ext_data_rw    4096 2026-11-25 12:18 .
+drwxrws--- 3 u0_a122 ext_data_rw    4096 2026-11-25 12:18 ..
+-rw-rw---- 1 u0_a122 ext_data_rw    2101 2026-11-25 12:18 captions.txt
+-rw-rw---- 1 u0_a122 ext_data_rw 1401915 2026-11-25 12:18 desert-01.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1365986 2026-11-25 12:18 desert-02.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1245452 2026-11-25 12:18 desert-03.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2416184 2026-11-25 12:18 desert-04.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1932977 2026-11-25 12:18 desert-05.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1401341 2026-11-25 12:18 desert-06.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1617473 2026-11-25 12:18 desert-07.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1637373 2026-11-25 12:18 desert-08.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2439891 2026-11-25 12:18 heritage-01.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2377883 2026-11-25 12:18 heritage-02.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2137017 2026-11-25 12:18 heritage-03.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2084688 2026-11-25 12:18 heritage-04.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 3008500 2026-11-25 12:18 heritage-05.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1875439 2026-11-25 12:18 heritage-06.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1511345 2026-11-25 12:18 mountains-01.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1771907 2026-11-25 12:18 mountains-02.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2197707 2026-11-25 12:18 mountains-03.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1697652 2026-11-25 12:18 mountains-04.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1752795 2026-11-25 12:18 mountains-05.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1656314 2026-11-25 12:18 mountains-06.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1680144 2026-11-25 12:18 mountains-07.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2010078 2026-11-25 12:18 mountains-08.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1852181 2026-11-25 12:18 mountains-09.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1993052 2026-11-25 12:18 mountains-10.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1573933 2026-11-25 12:18 sea-01.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 1483969 2026-11-25 12:18 sea-02.jpg
+-rw-rw---- 1 u0_a122 ext_data_rw 2297858 2026-11-25 12:18 sea-03.jpg
