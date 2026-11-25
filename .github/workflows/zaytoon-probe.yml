@@ -5,7 +5,7 @@ name: Zaytoon data probe
 on:
   push:
     branches: ["zaytoon/**"]
-    paths: ["zaytoon/lab/probe.py", ".github/workflows/zaytoon-probe.yml"]
+    paths: ["zaytoon/lab/*.py", ".github/workflows/zaytoon-probe.yml"]
   workflow_dispatch:
 
 permissions:
@@ -16,8 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - name: Probe
-        run: python3 zaytoon/lab/probe.py
+      - name: Wallpaper candidates
+        run: |
+          pip install --quiet pillow
+          python3 zaytoon/lab/wallpapers_probe.py
       - name: Push the samples
         run: |
           cd zaytoon/lab/out
