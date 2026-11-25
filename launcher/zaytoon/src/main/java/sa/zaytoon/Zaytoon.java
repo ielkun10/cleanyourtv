@@ -49,7 +49,7 @@ public final class Zaytoon {
         try {
             z.styleClock(clockBlock, clock);
             z.mirrorHeader(header, clockBlock, topButtons);
-            if (Store.prefs(activity).getBoolean(Store.STRIP, true)) z.addStrip(root, header, body, accent == 0 ? Ui.GOLD : accent);
+            if (Store.prefs(activity).getBoolean(Store.STRIP, true)) z.addStrip(root, clockBlock, body, accent == 0 ? Ui.GOLD : accent);
             if (Wallpapers.count(activity) == 0 && !Wallpapers.chosen(activity).isEmpty()) {
                 Wallpapers.get().sync(activity, () -> z.main.post(z::reloadIfShown));
             }
@@ -100,21 +100,41 @@ public final class Zaytoon {
         topButtons.setLayoutParams(b);
     }
 
-    private void addStrip(FrameLayout root, ViewGroup header, Typeface body, int accent) {
+    /**
+     * The cards sit in the header, to the left of the clock pane and level with its top, above the top buttons. The
+     * space just above the dock belongs to the launcher's app title and to the rows that scroll up from the grid, so
+     * nothing of ours goes there.
+     */
+    private void addStrip(FrameLayout root, View clockBlock, Typeface body, int accent) {
         strip = new HomeStrip(activity, body, accent);
-        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-        lp.rightMargin = Ui.dp(activity, 58);
-        // Above the dock and the grid in drawing order only: it takes no focus and no keys.
+        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT,
+                Gravity.TOP | Gravity.LEFT);
+        lp.leftMargin = Ui.dp(activity, 56);
+        strip.setVisibility(View.INVISIBLE);
+        // Drawn above the wallpaper only: it takes no focus and no keys.
         root.addView(strip, lp);
-        header.addOnLayoutChangeListener((v, l, t, r, bottom, ol, ot, or, ob) -> {
+        View.OnLayoutChangeListener place = (v, l, t, r, b, ol, ot, or, ob) -> {
             int[] at = new int[2];
             int[] rootAt = new int[2];
-            v.getLocationInWindow(at);
+            clockBlock.getLocationInWindow(at);
             root.getLocationInWindow(rootAt);
-            int y = at[1] - rootAt[1] + v.getHeight() + Ui.dp(activity, 22);
+            int left = Ui.dp(activity, 56);
+            int width = at[0] - rootAt[0] - Ui.dp(activity, 20) - left;
+            FrameLayout.LayoutParams p = (FrameLayout.LayoutParams) strip.getLayoutParams();
+            if (width < Ui.dp(activity, 360)) {
+                strip.setVisibility(View.GONE);
+                return;
+            }
+            if (p.width != width) {
+                p.width = width;
+                strip.setLayoutParams(p);
+            }
+            int y = at[1] - rootAt[1];
             if ((int) strip.getTranslationY() != y) strip.setTranslationY(y);
-        });
+            strip.setVisibility(View.VISIBLE);
+        };
+        clockBlock.addOnLayoutChangeListener(place);
+        root.addOnLayoutChangeListener(place);
         strip.update();
     }
 

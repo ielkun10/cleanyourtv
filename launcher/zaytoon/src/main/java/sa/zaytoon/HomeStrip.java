@@ -14,7 +14,7 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
- * The three glass cards on the home screen, under the clock: the weather, the next prayer with its countdown, and the
+ * The three glass cards on the home screen, beside the clock: the weather, the next prayer with its countdown, and the
  * followed clubs' next or live match (one club per minute). Display only, never focusable: the remote's path through
  * Home stays exactly as it was. Everything here is also in the panel, opened by the olive button in the top bar.
  */
@@ -61,12 +61,12 @@ final class HomeStrip extends LinearLayout {
         weather = new Card(c);
         prayer = new Card(c);
         sports = new Card(c);
-        int w = Ui.dp(c, 270);
         int gap = Ui.dp(c, 14);
         // Laid out right to left by hand: the launcher's layouts are left to right on purpose (no supportsRtl).
         Card[] order = {sports, prayer, weather};
         for (int i = 0; i < order.length; i++) {
-            LayoutParams lp = new LayoutParams(w, LayoutParams.WRAP_CONTENT);
+            // Equal shares of whatever width the header leaves beside the clock.
+            LayoutParams lp = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f);
             if (i > 0) lp.leftMargin = gap;
             addView(order[i], lp);
         }
