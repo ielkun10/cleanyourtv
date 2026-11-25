@@ -31,6 +31,7 @@ public final class Zaytoon {
     private HomeStrip strip;
     private final Runnable onData = this::refreshStrip;
     private final Handler main = new Handler(Looper.getMainLooper());
+    private TextView clockView;
 
     private Zaytoon(Activity activity, Host host) {
         this.activity = activity;
@@ -46,6 +47,7 @@ public final class Zaytoon {
     public static Zaytoon attach(Activity activity, FrameLayout root, ViewGroup header, View clockBlock, TextView clock,
                                  View topButtons, Typeface body, int accent, Host host) {
         Zaytoon z = new Zaytoon(activity, host);
+        z.clockView = clock;
         try {
             z.styleClock(clockBlock, clock);
             z.mirrorHeader(header, clockBlock, topButtons);
@@ -158,12 +160,35 @@ public final class Zaytoon {
         holder.post(() -> holder.setLayoutParams(p));
     }
 
+    /** The theme's locale tag (ar-SA-u-nu-arab), or null when the theme sets none. */
+    static java.util.Locale themeLocale(Context c) {
+        String tag = ThemeFile.read(c).optString("locale", "").trim();
+        return tag.isEmpty() ? null : java.util.Locale.forLanguageTag(tag);
+    }
+
+    /**
+     * The clock's digits follow the process's default locale, and Android puts the system's back after another
+     * window's configuration change. Home's Arabic digits are set again whenever they were lost.
+     */
+    private void keepLocale() {
+        java.util.Locale want = themeLocale(activity);
+        if (want == null || want.equals(java.util.Locale.getDefault())) return;
+        java.util.Locale.setDefault(want);
+        if (clockView instanceof android.widget.TextClock) {
+            android.widget.TextClock t = (android.widget.TextClock) clockView;
+            t.setFormat12Hour(t.getFormat12Hour());
+            t.setFormat24Hour(t.getFormat24Hour());
+        }
+    }
+
     private void refreshStrip() {
         if (strip != null) strip.update();
     }
 
     public void resume() {
         try {
+            keepLocale();
+            main.postDelayed(this::keepLocale, 1500);
             Hub hub = Hub.get(activity);
             hub.listen(onData);
             hub.refresh(false);
@@ -180,6 +205,7 @@ public final class Zaytoon {
     /** Once a minute from the launcher's clock tick. */
     public void minute() {
         try {
+            keepLocale();
             Hub.get(activity).refresh(false);
             if (strip != null) strip.tick();
         } catch (RuntimeException e) {

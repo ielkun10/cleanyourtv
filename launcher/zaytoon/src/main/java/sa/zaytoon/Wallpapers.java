@@ -165,6 +165,13 @@ public final class Wallpapers {
         Map<String, Integer> perSet = new LinkedHashMap<>();
         Map<String, String> captions = readCaptions(dir);
         Set<String> wanted = new HashSet<>();
+        // Every chosen picture's name first: Home reads captions.txt once, when the first picture arrives, and a
+        // picture missing from it would show no credit until Home was opened again.
+        Map<String, Integer> counted = new LinkedHashMap<>();
+        for (Item it : all) {
+            int index = counted.merge(it.set, 1, Integer::sum);
+            if (chosen.contains(it.set)) captions.put(it.file(index), it.title + " · " + it.artist + " · " + it.license);
+        }
         int failed = 0, done = 0, total = 0;
         for (Item it : all) {
             int index = perSet.merge(it.set, 1, Integer::sum);
@@ -172,7 +179,6 @@ public final class Wallpapers {
             if (!chosen.contains(it.set)) continue;
             wanted.add(name);
             total++;
-            captions.put(name, it.title + " · " + it.artist + " · " + it.license);
             File target = new File(dir, name);
             if (target.isFile() && target.length() > 0) {
                 done++;

@@ -67,6 +67,20 @@ public final class ZaytoonActivity extends Activity {
         }
     };
 
+    /** The same locale as Home, so opening the panel never changes the process's configuration under it. */
+    @Override
+    protected void attachBaseContext(android.content.Context base) {
+        java.util.Locale locale = Zaytoon.themeLocale(base);
+        if (locale == null) {
+            super.attachBaseContext(base);
+            return;
+        }
+        java.util.Locale.setDefault(locale);
+        android.content.res.Configuration c = new android.content.res.Configuration(base.getResources().getConfiguration());
+        c.setLocale(locale);
+        super.attachBaseContext(base.createConfigurationContext(c));
+    }
+
     @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
