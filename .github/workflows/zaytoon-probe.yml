@@ -1,0 +1,27 @@
+name: Zaytoon data probe
+
+# Fork only: reads the free data sources Zaytoon uses (Wikimedia Commons, Open-Meteo, Aladhan, ESPN's public
+# feed) from a GitHub runner and pushes the samples to the zaytoon/lab-results branch.
+on:
+  push:
+    branches: ["zaytoon/**"]
+    paths: ["zaytoon/lab/probe.py", ".github/workflows/zaytoon-probe.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Probe
+        run: python3 zaytoon/lab/probe.py
+      - name: Push the samples
+        run: |
+          cd zaytoon/lab/out
+          git init -q -b zaytoon/lab-results
+          git config user.name "zaytoon-lab"; git config user.email "zaytoon-lab@users.noreply.github.com"
+          git add -A; git commit -qm "probe ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/zaytoon/lab-results-probe
