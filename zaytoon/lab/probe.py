@@ -84,6 +84,23 @@ def main():
             save(name + ".json", get(url))
         except Exception as e:
             save(name + ".json", {"error": str(e)})
+    base = "https://site.api.espn.com/apis/site/v2/sports/soccer/"
+    for slug, league, tid in (("mancity", "eng.1", "382"), ("barcelona", "esp.1", "83"), ("chelsea", "eng.1", "363")):
+        for name, url in ((f"{slug}_team", f"{base}{league}/teams/{tid}"),
+                          (f"{slug}_results", f"{base}{league}/teams/{tid}/schedule"),
+                          (f"{slug}_fixtures", f"{base}{league}/teams/{tid}/schedule?fixture=true"),
+                          (f"{slug}_all_fixtures", f"{base}all/teams/{tid}/schedule?fixture=true")):
+            try:
+                save(name + ".json", get(url))
+            except Exception as e:
+                save(name + ".json", {"error": str(e)})
+    for league in ("eng.1", "esp.1", "uefa.champions"):
+        for name, url in ((f"standings_{league}", f"https://site.api.espn.com/apis/v2/sports/soccer/{league}/standings"),
+                          (f"scoreboard_{league}", f"{base}{league}/scoreboard")):
+            try:
+                save(name + ".json", get(url))
+            except Exception as e:
+                save(name + ".json", {"error": str(e)})
     try:
         teams = json.load(open(os.path.join(OUT, "espn_teams.json")))
         team = teams["sports"][0]["leagues"][0]["teams"][0]["team"]
